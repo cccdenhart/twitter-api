@@ -2,20 +2,31 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import java.io.FileReader;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
 import java.util.List;
 
-public class PostgresPopulator implements IPopulator {
+public class PostgresPopulator extends APostgresConnector implements IPopulator {
 
-  // contains data read from the CSV file as a (sort of) nested Array
-  private List<String[]> followers;
-  private List<String[]> tweets;
+  public static void main(String[] args) {
+    // start timer
+    long startTime = System.currentTimeMillis();
 
-  // constructor
-  public PostgresPopulator(String followersFile, String tweetsFile) {
-    this.followers = this.extract(followersFile);
-    this.tweets = this.extract(tweetsFile);
+    // get database information from program arguments
+    String username = args[0];
+    String password = args[1];
+    String database = args[2];
+
+    // connect to database and populate it
+    PostgresPopulator pp = new PostgresPopulator();
+    Connection c = pp.connect(username, password, database);
+    System.out.println("Inserting followers data to postgreSQL...");
+    pp.insertMany(c, false, pp.extract("./followers.csv"));
+    System.out.println("Inserting tweets data to postgreSQL...");
+    pp.insertMany(c, true, pp.extract("./tweets.csv"));
+
+    // end timer and report runtime
+    long stopTime = System.currentTimeMillis();
+    long elapsedTime = stopTime - startTime;
+    System.out.println("data entry completed in: " + elapsedTime + " milliseconds");
   }
 
   // used CSV read-in suggestions from: https://www.geeksforgeeks.org/reading-csv-file-java-using-opencv/
@@ -36,63 +47,18 @@ public class PostgresPopulator implements IPopulator {
     return readIn;
   }
 
-  private void followersInsert(Connection c, int userID, int followsID) {
-    try {
-      Statement stmt = c.createStatement();
-      String sql = "INSERT INTO followers (user_id, follows_id) VALUES (" + userID + ", " + followsID + ");";
-      stmt.executeUpdate(sql);
-    } catch (Exception e) {
-      System.err.println(e.getClass().getName() + ": " + e.getMessage());
-      System.exit(0);
-    }
-  }
-
-  private void tweetInsert(Connection c, int tweetID, int userID, String ts, String text) {
-    try {
-      Statement stmt = c.createStatement();
-      String sql = "INSERT INTO tweets (tweet_id, user_id, tweet_ts, tweet_text) VALUES (" + tweetID + ", " + userID + ",'" + ts + "','" + text + "');";
-      stmt.executeUpdate(sql);
-    } catch (Exception e) {
-      System.err.println(e.getClass().getName() + ": " + e.getMessage());
-      System.exit(0);
-    }
-  }
-
-  private void insertMany(Connection c, boolean isTweet) {
-    List<String[]> data = this.followers;
+  @Override
+  public void insertMany(Connection c, boolean isTweet, List<String[]> data) {
     if (isTweet) {
-      data = this.tweets;
-    }
-    for (String[] row : data) {
-      if (isTweet) {
-        this.tweetInsert(c, Integer.parseInt(row[0]), Integer.parseInt(row[1]), row[2], row[3]);
-      } else {
-        this.followersInsert(c, Integer.parseInt(row[0]), Integer.parseInt(row[1]));
+      for (String[] row : data) {
+        String sql = "INSERT INTO tweets (tweet_id, user_id, tweet_ts, tweet_text) VALUES (" + row[0] + ", " + row[1] + ",'" + row[2] + "','" + row[3] + "');";
+        this.insert(c, sql);
+      }
+    } else {
+      for (String[] row : data) {
+        String sql = "INSERT INTO followers (user_id, follows_id) VALUES (" + row[0] + ", " + row[1] + ");";
+        this.insert(c, sql);
       }
     }
-  }
-
-  public static void main(String args[]) {
-    long startTime = System.currentTimeMillis();
-    System.out.println("Trying to connect to database...");
-    PostgresPopulator pp = new PostgresPopulator("./followers.csv", "./tweets.csv");
-    Connection c = null;
-    try {
-      c = DriverManager
-          .getConnection("jdbc:postgresql://localhost:5432/ds4300_hw01",
-              "cccdenhart", "1Charles");
-    } catch (Exception e) {
-      e.printStackTrace();
-      System.err.println(e.getClass().getName() + ": " + e.getMessage());
-      System.exit(0);
-    }
-    System.out.println("Opened database successfully");
-    System.out.println("Inserting followers data to postgreSQL...");
-    pp.insertMany(c, false);
-    System.out.println("Inserting tweets data to postgreSQL...");
-    pp.insertMany(c, true);
-    long stopTime = System.currentTimeMillis();
-    float elapsedTime = (stopTime - startTime) / 1000;
-    System.out.println("data entry completed in: " + elapsedTime + " seconds");
   }
 }

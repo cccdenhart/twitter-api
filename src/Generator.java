@@ -44,8 +44,8 @@ public class Generator {
         }
 
         long stopTime = System.currentTimeMillis();
-        float elapsedTime = (stopTime - startTime) / 1000;
-        System.out.println("CSV files generated in: " + elapsedTime + " seconds");
+        long elapsedTime = stopTime - startTime;
+        System.out.println("CSV files generated in: " + elapsedTime + " milliseconds");
     }
 
     // writes the tweetOutput generated to a CSV file
@@ -67,6 +67,36 @@ public class Generator {
         System.out.println("Done");
     }
 
+    // generate the number of tweets that are required
+    private void makeManyTweets() {
+        System.out.println("Making tweets...");
+        for (int i = 0; i < this.NUM_TWEETS; i++) {
+            this.makeTweet(i);
+            if (i < this.NUM_TWEETS - 1) {
+                this.tweetOutput.append("\n");
+            }
+        }
+        System.out.println("Done");
+    }
+
+    // randomly generates a tweet
+    private void makeTweet(int tweet_id) {
+        int user_id = new Random().nextInt(this.NUM_USERS);
+        Timestamp ts = this.makeTimestamp();
+        String text = this.makeTweetText();
+        String tweet = tweet_id + "," + user_id + "," + ts + "," + text;
+        this.tweetOutput.append(tweet);
+    }
+
+    // generates a random timestamp
+    private Timestamp makeTimestamp() {
+        long offset = Timestamp.valueOf(this.START_YEAR + "-01-01 00:00:00").getTime();
+        long end = Timestamp.valueOf(this.END_YEAR + "-01-01 00:00:00").getTime();
+        long diff = end - offset + 1;
+        Timestamp rand = new Timestamp(offset + (long)(Math.random() * diff));
+        return rand;
+    }
+
     // randomly generates text for a tweet
     private String makeTweetText() {
         String text = "";
@@ -79,40 +109,14 @@ public class Generator {
         return text;
     }
 
-    // generates a random timestamp
-    private String makeTimestamp() {
-        int year = this.START_YEAR + new Random().nextInt(this.END_YEAR - this.START_YEAR);
-        String month = Integer.toString(1 + new Random().nextInt(12));
-        String day = Integer.toString(1 + new Random().nextInt(30)); // assumes only 30 days in a month for simplicity
-        String hour = Integer.toString(new Random().nextInt(24));
-        String minute = Integer.toString(new Random().nextInt(60));
-        String second = Integer.toString(1 + new Random().nextInt(60));
-        ArrayList<String> items = new ArrayList<>(Arrays.asList(month, day, hour, minute, second));
-        // insert a '0' in front of every single digit time item
-        for (String item : items) {
-            if (item.length() == 1) {
-                item = "0" + item;
-            }
-        }
-        return month + "-" + day + "-" + year + " " + hour + ":" + minute + ":" + second;
-    }
-
-    // randomly generates a tweet
-    private void makeTweet(int tweet_id) {
-        int user_id = new Random().nextInt(this.NUM_USERS);
-        String ts = this.makeTimestamp();
-        String text = this.makeTweetText();
-        String tweet = tweet_id + "," + user_id + "," + ts + "," + text;
-        this.tweetOutput.append(tweet);
-    }
-
-    // generate the number of tweets that are required
-    private void makeManyTweets() {
-        System.out.println("Making tweets...");
-        for (int i = 0; i < this.NUM_TWEETS; i++) {
-            this.makeTweet(i);
-            if (i < this.NUM_TWEETS - 1) {
-                this.tweetOutput.append("\n");
+    // generate followers for every user
+    private void makeManyFollowers() {
+        System.out.println("Making followers...");
+        for (int i = 0; i < this.NUM_USERS; i++) {
+            if (i < this.NUM_USERS - 1) {
+                this.makeFollowers(i, false);
+            } else {
+                this.makeFollowers(i, true);
             }
         }
         System.out.println("Done");
@@ -134,18 +138,5 @@ public class Generator {
                 }
             }
         }
-    }
-
-    // generate followers for every user
-    private void makeManyFollowers() {
-        System.out.println("Making followers...");
-        for (int i = 0; i < this.NUM_USERS; i++) {
-            if (i < this.NUM_USERS - 1) {
-                this.makeFollowers(i, false);
-            } else {
-                this.makeFollowers(i, true);
-            }
-        }
-        System.out.println("Done");
     }
 }
