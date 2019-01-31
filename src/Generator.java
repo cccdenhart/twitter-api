@@ -52,7 +52,7 @@ public class Generator {
     // used some ideas from: https://stackoverflow.com/questions/30073980/java-writing-strings-to-a-csv-file
     private void genTweetCSV() throws FileNotFoundException {
         System.out.println("Generating tweets CSV file...");
-        PrintWriter pw = new PrintWriter(new File("./tweets.csv"));
+        PrintWriter pw = new PrintWriter(new File("./data/tweets.csv"));
         pw.write(this.tweetOutput.toString());
         pw.close();
         System.out.println("Done");
@@ -61,7 +61,7 @@ public class Generator {
     // writes the followersOutput generated to a CSV file
     private void genFollowersCSV() throws FileNotFoundException {
         System.out.println("Generating followers CSV file...");
-        PrintWriter pw = new PrintWriter(new File("./followers.csv"));
+        PrintWriter pw = new PrintWriter(new File("./data/followers.csv"));
         pw.write(this.followersOutput.toString());
         pw.close();
         System.out.println("Done");
