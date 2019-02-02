@@ -1,5 +1,7 @@
+import java.sql.Timestamp;
+
 // represents a tweet
-public class Tweet {
+public class Tweet implements Comparable {
 
   private int tweet_id;
   private int user_id;
@@ -8,6 +10,12 @@ public class Tweet {
 
   public Tweet (int tweet_id, int user_id, String tweet_ts, String tweet_text) {
     this.tweet_id = tweet_id;
+    this.user_id = user_id;
+    this.tweet_ts = tweet_ts;
+    this.tweet_text = tweet_text;
+  }
+
+  public Tweet (int user_id, String tweet_ts, String tweet_text) {
     this.user_id = user_id;
     this.tweet_ts = tweet_ts;
     this.tweet_text = tweet_text;
@@ -34,4 +42,12 @@ public class Tweet {
     return tweet_text;
   }
 
+  public Timestamp convertTimestamp() {
+    return null;
+  }
+
+  @Override
+  public int compareTo(Object o) {
+    return this.convertTimestamp().compareTo(((Tweet) o).convertTimestamp());
+  }
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,8 +14,7 @@ public class RedisTwitterAPI implements ITwitterAPI {
   @Override
   public void postTweet(Tweet t) {
     Map<String, String> tweet_map = new HashMap<>();
-    String key = "tweet:" + t.getTweet_id();
-    tweet_map.put("user_id", Integer.toString(t.getUser_id()));
+    String key = "tweet:" + t.getTweet_id() + ":user:" + t.getUser_id();
     tweet_map.put("ts", t.getTweet_ts());
     tweet_map.put("text", t.getTweet_text());
     jedis.hmset(key, tweet_map);
@@ -29,7 +29,13 @@ public class RedisTwitterAPI implements ITwitterAPI {
   @Override
   public List<Tweet> getTimeline(int user_id) {
     List<Integer> followers = this.getFollowers(user_id);
-    return null;
+    List<Tweet> allTweets = new ArrayList<>();
+    for (Integer follower : followers) {
+      List<Tweet> followerTweets = this.getTweets(follower);
+      allTweets.addAll(followerTweets);
+    }
+    List<Tweet> minTweets = this.getMinTweets(allTweets);
+    return minTweets;
   }
 
   private List<Integer> getFollowers(int user_id) {
@@ -42,7 +48,22 @@ public class RedisTwitterAPI implements ITwitterAPI {
   }
 
   private List<Tweet> getTweets(int user_id) {
-    return null;
+    List<String> ts = jedis.hmget("tweet:*:user:" + user_id, "ts");
+    List<String> text = jedis.hmget("tweet:*:user:" + user_id, "text");
+    ArrayList<Tweet> tweets = new ArrayList<>();
+    for (int i = 0; i < ts.size(); i++) {
+      String time = ts.get(i);
+      String tweet_text = text.get(i);
+      Tweet t = new Tweet(user_id, time, tweet_text);
+      tweets.add(t);
+    }
+    return tweets;
+  }
+
+  private List<Tweet> getMinTweets(List<Tweet> tweets) {
+    Collections.sort(tweets);
+    return tweets.subList(0, 10);
+
   }
 
   @Override
