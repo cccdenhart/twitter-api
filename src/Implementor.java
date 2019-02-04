@@ -84,10 +84,12 @@ public class Implementor {
     long startHTTime = System.currentTimeMillis();
     System.out.println("Retrieving home timelines...");
     for (int user_id : user_ids) {
+      System.out.println("User " + user_id + " timeline: ");
       List<Tweet> timelines = api.getTimeline(user_id);
       for (Tweet t : timelines) {
         System.out.println(t.toString());
       }
+      System.out.println();
     }
     long stopHTTime = System.currentTimeMillis();
     long elapsedHTTime = stopHTTime - startHTTime;

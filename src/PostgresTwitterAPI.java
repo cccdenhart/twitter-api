@@ -68,16 +68,16 @@ public class PostgresTwitterAPI implements ITwitterAPI {
   }
 
   // gets the tweets at the positions given by the indexes array
-  private ArrayList<Tweet> getRecentTweets(ArrayList<Integer> indexes, ArrayList<Integer> tweets) {
+  private List<Tweet> getRecentTweets(ArrayList<Integer> indexes, ArrayList<Integer> tweets) {
     ArrayList<Integer> tweet_ids = new ArrayList<>();
     for (int index : indexes) {
       tweet_ids.add(tweets.get(index));
     }
-    ArrayList<Tweet> recentTweets = this.getTweets(tweet_ids);
+    List<Tweet> recentTweets = this.getTweets(tweet_ids);
     return recentTweets;
   }
 
-  private ArrayList<Tweet> getTweets(ArrayList<Integer> tweet_ids) {
+  private List<Tweet> getTweets(ArrayList<Integer> tweet_ids) {
     ArrayList<Tweet> tweets = new ArrayList<>();
     for (int tweet_id : tweet_ids) {
       ResultSet rs = this.db
