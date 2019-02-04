@@ -38,7 +38,7 @@ public class PostgresTwitterAPI implements ITwitterAPI {
     try {
       for (Integer follower : followers) {
         ResultSet rs = this.db
-            .query("select tweet_ts, tweet_text from tweets where user_id = " + follower + ";");
+            .query("select tweet_id, tweet_ts, tweet_text from tweets where user_id = " + follower + ";");
         while (rs.next()) {
           tweets.add(rs.getInt("tweet_id"));
           ts.add(rs.getTimestamp("tweet_ts"));
@@ -81,7 +81,7 @@ public class PostgresTwitterAPI implements ITwitterAPI {
     ArrayList<Tweet> tweets = new ArrayList<>();
     for (int tweet_id : tweet_ids) {
       ResultSet rs = this.db
-          .query("select tweet_ts from tweets where tweet_id = " + tweet_id + ";");
+          .query("select * from tweets where tweet_id = " + tweet_id + ";");
       try {
         while (rs.next()) {
           int user_id = rs.getInt("user_id");

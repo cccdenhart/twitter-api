@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 
 public class Generator {
 
-    // store all of the words to be used in an ArrayList
+    // arbitrary list of words used to generate a tweet
     private final ArrayList<String> WORDS = new ArrayList<>(Arrays.asList("hello", "goodbye", "something", "word", "other", "thing", "big", "small", "ordinary", "snow", "weather", "rain", "summer", "winter", "fall", "spring", "falling", "rising", "up", "down", "wall", "brick", "trash", "recycling", "sky", "ground", "carpet", "house", "furniture", "chair", "sofa", "tv", "phone", "sink", "fridge", "water", "chicken", "cow"));
 
     // store basic assumptions of the simulation as immutable constants

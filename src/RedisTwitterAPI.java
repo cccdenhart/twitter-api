@@ -9,7 +9,7 @@ import redis.clients.jedis.Jedis;
 
 public class RedisTwitterAPI implements ITwitterAPI {
 
-  static Jedis jedis = new Jedis("localhost");
+  private static Jedis jedis = new Jedis("localhost");
 
   @Override
   public void postTweet(Tweet t) {
@@ -39,17 +39,25 @@ public class RedisTwitterAPI implements ITwitterAPI {
   }
 
   private List<Integer> getFollowers(int user_id) {
-    List<String> lrange = jedis.lrange(Integer.toString(user_id), 0, -1);
+    String key = "user:" + user_id;
+    List<String> follower_string = jedis.lrange(key, 0, -1);
     ArrayList<Integer> followers = new ArrayList<>();
-    for (String f : lrange) {
+    for (String f : follower_string) {
       followers.add(Integer.parseInt(f));
     }
     return followers;
   }
 
   private List<Tweet> getTweets(int user_id) {
-    List<String> ts = jedis.hmget("tweet:*:user:" + user_id, "ts");
-    List<String> text = jedis.hmget("tweet:*:user:" + user_id, "text");
+    Set<String> keys = jedis.keys("tweet:*:user:" + user_id);
+    List<String> ts = new ArrayList<>();
+    List<String> text = new ArrayList<>();
+    for (String key : keys) {
+      List<String> new_ts = jedis.hmget(key, "ts");
+      List<String> new_text = jedis.hmget(key, "text");
+      ts.addAll(new_ts);
+      text.addAll(new_text);
+    }
     ArrayList<Tweet> tweets = new ArrayList<>();
     for (int i = 0; i < ts.size(); i++) {
       String time = ts.get(i);
@@ -71,7 +79,7 @@ public class RedisTwitterAPI implements ITwitterAPI {
     Set<String> users = jedis.keys("user:*");
     ArrayList<Integer> user_ids = new ArrayList<>();
     for (String u : users) {
-      String key = u.substring(u.indexOf(":"));
+      String key = u.substring(u.indexOf(":") + 1);
       user_ids.add(Integer.parseInt(key));
     }
     int user_id = user_ids.get(new Random().nextInt(users.size()));

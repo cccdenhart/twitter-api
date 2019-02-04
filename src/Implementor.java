@@ -10,7 +10,7 @@ public class Implementor {
     // filenames
     final String TWEET_FILE = "./data/tweets.csv";
     final String FOLLOWERS_FILE = "./data/followers.csv";
-    final int NUM_TIMELINES = 10;
+    final int NUM_TIMELINES = 1000;
 
     // get database information from program arguments
     String username = args[0];
@@ -33,11 +33,26 @@ public class Implementor {
     if (db.equals("postgres")) {
       api = new PostgresTwitterAPI(username, password, database);
     } else {
-      api = new RedisTwitterAPI();
+      System.out.println("Enter 't' if using broadcasting and 'f' if not:");
+      String broadcasting = keyboard.next();
+      while (!broadcasting.toLowerCase().equals("t") && !broadcasting.toLowerCase().equals("f")) {
+        System.out.println("Invalid input.  Please enter 't' or 'f':");
+        broadcasting = keyboard.next();
+      }
+      Boolean broadcast;
+      if (broadcasting.equals("t")) {
+        api = new RedisBroadcastTwitterAPI();
+      } else {
+        api = new RedisTwitterAPI();
+      }
     }
+
+    keyboard.close();
+
     Extractor extractor = new Extractor();
     List<Tweet> tweets = extractor.getTweets(TWEET_FILE);
     HashMap<Integer, ArrayList<Integer>> followers = extractor.getFollowers(FOLLOWERS_FILE);
+
 
     // add followers
     System.out.println("Adding followers to database...");
