@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 
 public class Generator {
 
-    // store all of the words to be used in an ArrayList
+    // arbitrary list of words used to generate a tweet
     private final ArrayList<String> WORDS = new ArrayList<>(Arrays.asList("hello", "goodbye", "something", "word", "other", "thing", "big", "small", "ordinary", "snow", "weather", "rain", "summer", "winter", "fall", "spring", "falling", "rising", "up", "down", "wall", "brick", "trash", "recycling", "sky", "ground", "carpet", "house", "furniture", "chair", "sofa", "tv", "phone", "sink", "fridge", "water", "chicken", "cow"));
 
     // store basic assumptions of the simulation as immutable constants
@@ -52,7 +52,7 @@ public class Generator {
     // used some ideas from: https://stackoverflow.com/questions/30073980/java-writing-strings-to-a-csv-file
     private void genTweetCSV() throws FileNotFoundException {
         System.out.println("Generating tweets CSV file...");
-        PrintWriter pw = new PrintWriter(new File("./tweets.csv"));
+        PrintWriter pw = new PrintWriter(new File("./data/tweets.csv"));
         pw.write(this.tweetOutput.toString());
         pw.close();
         System.out.println("Done");
@@ -61,7 +61,7 @@ public class Generator {
     // writes the followersOutput generated to a CSV file
     private void genFollowersCSV() throws FileNotFoundException {
         System.out.println("Generating followers CSV file...");
-        PrintWriter pw = new PrintWriter(new File("./followers.csv"));
+        PrintWriter pw = new PrintWriter(new File("./data/followers.csv"));
         pw.write(this.followersOutput.toString());
         pw.close();
         System.out.println("Done");

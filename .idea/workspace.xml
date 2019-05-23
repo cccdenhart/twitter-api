@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06884fe4-a20f-43dd-8a72-89d0576148c8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Twitter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw01_results.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw01/APostgresConnector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw01/Generator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw01/IHomeTimeline.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw01/IPopulator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw01/META-INF/hw01.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw01/PostgresHomeTimeline.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/hw01/PostgresPopulator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PostgresPopulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostgresPopulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/~$hw01_results.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documents/hw02_results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/documents/hw02_results.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Implementor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Implementor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PostgresTwitterAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostgresTwitterAPI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/twitter/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,32 +29,132 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/PostgresPopulator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="41" column="35" lean-forward="true" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PostgresHomeTimeline.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="93" column="46" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Generator.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="225">
+                  <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Implementor.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="850">
+                  <caret line="93" column="23" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Extractor.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="264">
+                  <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/RedisTwitterAPI.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="132">
+                  <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/RedisBroadcastTwitterAPI.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="99">
+                  <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/documents/hw02_results.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="240">
+                  <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/README.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="SPLIT">
+                  <first_editor relative-caret-position="135">
+                    <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+                  </first_editor>
+                  <second_editor />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Tweet.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="199">
+                  <caret line="48" selection-start-line="48" selection-end-line="48" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#470#471#0" expanded="true" />
+                    <element signature="e#495#496#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ITwitterAPI.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="120">
+                  <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/PostgresTwitterAPI.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="504">
+                  <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -87,17 +178,44 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/PostgresPopulater.java" />
         <option value="$PROJECT_DIR$/src/PostgreSQLJDBC.java" />
-        <option value="$PROJECT_DIR$/src/Generator.java" />
         <option value="$PROJECT_DIR$/src/IPopulator.java" />
         <option value="$PROJECT_DIR$/src/IHomeTimeline.java" />
         <option value="$PROJECT_DIR$/src/APostgresConnector.java" />
-        <option value="$PROJECT_DIR$/src/PostgresHomeTimeline.java" />
+        <option value="$PROJECT_DIR$/src/Implement.java" />
         <option value="$PROJECT_DIR$/src/PostgresPopulator.java" />
+        <option value="$PROJECT_DIR$/src/Extractor.java" />
+        <option value="$PROJECT_DIR$/src/PostgresHomeTimeline.java" />
+        <option value="$PROJECT_DIR$/twitter/pom.xml" />
+        <option value="$PROJECT_DIR$/src/DBUtils.java" />
+        <option value="$PROJECT_DIR$/src/Tweet.java" />
+        <option value="$PROJECT_DIR$/src/ARedisTwitterAPI.java" />
+        <option value="$PROJECT_DIR$/src/Generator.java" />
+        <option value="$PROJECT_DIR$/documents/hw02_submission.txt" />
+        <option value="$PROJECT_DIR$/src/RedisBroadcastTwitterAPI.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/Implementor.java" />
+        <option value="$PROJECT_DIR$/documents/hw02_results.txt" />
+        <option value="$PROJECT_DIR$/src/RedisTwitterAPI.java" />
+        <option value="$PROJECT_DIR$/src/PostgresTwitterAPI.java" />
+        <option value="$PROJECT_DIR$/src/ITwitterAPI.java" />
       </list>
     </option>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
+    <option name="y" value="203" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
@@ -107,26 +225,47 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Twitter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Twitter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Twitter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Twitter" type="462c0819:PsiDirectoryNode" />
+              <item name="documents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Twitter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Twitter" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548885527955" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549307753093" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/data" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -141,10 +280,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PostgresHomeTimeline">
+  <component name="RunManager" selected="Application.Implementor">
     <configuration name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Generator" />
       <module name="Twitter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Implementor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Implementor" />
+      <module name="Twitter" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;ds4300&quot; &quot;ds4300&quot; &quot;ds4300_hw01&quot;" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -169,9 +316,11 @@
       <item itemvalue="Application.Generator" />
       <item itemvalue="Application.PostgresPopulator" />
       <item itemvalue="Application.PostgresHomeTimeline" />
+      <item itemvalue="Application.Implementor" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Implementor" />
         <item itemvalue="Application.PostgresHomeTimeline" />
         <item itemvalue="Application.PostgresPopulator" />
         <item itemvalue="Application.Generator" />
@@ -194,18 +343,20 @@
       <workItem from="1548272749496" duration="144000" />
       <workItem from="1548274247946" duration="837000" />
       <workItem from="1548885414569" duration="25000" />
-      <workItem from="1548885595123" duration="9000" />
+      <workItem from="1548885595123" duration="16152000" />
+      <workItem from="1549034511204" duration="944000" />
+      <workItem from="1549069858285" duration="24156000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38946000" />
+    <option name="totallyTimeSpent" value="80189000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23247497" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13205537" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -214,7 +365,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299363" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3005848" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.24248704" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -231,12 +382,12 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Database" order="4" weight="0.3297568" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Maven" order="6" weight="0.32960597" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17739628" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -245,7 +396,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299363" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30063695" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30051813" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -262,7 +413,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Database" order="4" weight="0.3297568" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Maven" order="6" weight="0.32960597" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout-to-restore>
@@ -270,15 +421,21 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Tweet.java</url>
+          <line>48</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main.java" />
-    <entry file="jar://$PROJECT_DIR$/opencsv-4.3.2.jar!/com/opencsv/CSVReaderBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/opencsv-4.3.2.jar!/com/opencsv/CSVReaderBuilder.class" />
     <entry file="file://$PROJECT_DIR$/src/PostgreSQLJDBC.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Override.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -287,60 +444,165 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/APostgresConnector.java">
+    <entry file="file://$PROJECT_DIR$/src/IHomeTimeline.java" />
+    <entry file="file://$PROJECT_DIR$/src/IPopulator.java" />
+    <entry file="file://$PROJECT_DIR$/src/PostgresPopulator.java" />
+    <entry file="file://$PROJECT_DIR$/src/PostgresHomeTimeline.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.sql/java/sql/DriverManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        <state relative-caret-position="8883">
+          <caret line="701" selection-start-line="701" selection-end-line="701" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DBUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/tweets.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/opencsv/opencsv/4.0/opencsv-4.0.jar!/com/opencsv/CSVParserBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/ClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="520" selection-start-line="520" selection-end-line="520" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitter/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/AbstractList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="166" selection-start-line="166" selection-end-line="166" />
+          <folding>
+            <element signature="e#6404#6405#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tweet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#470#471#0" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="137" column="17" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="135">
+            <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Implementor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="93" column="23" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Extractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/documents/hw02_results.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Generator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+        <state relative-caret-position="225">
+          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/IPopulator.java">
+    <entry file="file://$PROJECT_DIR$/src/PostgresTwitterAPI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="49" lean-forward="true" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        <state relative-caret-position="504">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/IHomeTimeline.java">
+    <entry file="file://$PROJECT_DIR$/src/ITwitterAPI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RedisBroadcastTwitterAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PostgresPopulator.java">
+    <entry file="file://$PROJECT_DIR$/src/RedisTwitterAPI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="41" column="35" lean-forward="true" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PostgresHomeTimeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="93" column="46" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="46" />
+        <state relative-caret-position="132">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -399,7 +661,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>hw01</last-edited>
+          <last-edited>Twitter</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -411,6 +673,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: com.opencsv:opencsv:4.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -421,5 +684,8 @@
         </settings>
       </state>
     </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="" />
   </component>
 </project>

@@ -1,0 +1,17 @@
+Without broadcasting:
+
+  Post rate: 35,714 tweets / second
+  Timeline retrieval rate: .05 retrievals / second
+
+With broadcasting:
+
+  Post rate: 1,672 tweets / second
+  Timeline retrieval rate: 1,063 timelines / second
+
+Results:
+
+  Although the results are as predicted, they are even more contrasting than I might have guessed.
+  Without broadcasting, posting rate far surpassed relational database rates.  Retrievals, however,
+  were even worse than before. Broadcasting showed more promising results.  While post rates simply
+  matched relational levels, timeline retrievals well exceeded relational rates.
+

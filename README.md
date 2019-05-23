@@ -1,4 +1,12 @@
-# Twitter API
-Java API that operates as a simple back-end version of Twitter.  The two different APIs built were for Postgres and Redis.  Read/write speeds were tested and documented for each implementation.
+# Twitter Simulation
+This project simulates posting and retrieving tweets as the twitter application would do.  Two APIs are currently built, one for Postgres and one for Redis.  Read/write speeds were tested and documented for each implementation, then compared.
 
 This project was built for an assignment in *DS4300: Large Scale Information Processing*. 
+
+## To run: 
+- run the 'generator' file in order to generate CSV files of random tweets and follower combinations
+- Run the 'implementor' file to perform the simulation.  When running this file, follow the command line instructions to select a database type.
+
+##  Project structure:
+- generated CSV files are stored in the ./data directory
+- results and instructions for both assignment versions are stored in the ./documents directory
