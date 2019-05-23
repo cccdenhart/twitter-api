@@ -1,5 +1,7 @@
 # Twitter Simulation
-This project simulates posting and retrieving tweets as the twitter application would do.
+This project simulates posting and retrieving tweets as the twitter application would do.  Two APIs are currently built, one for Postgres and one for Redis.  Read/write speeds were tested and documented for each implementation, then compared.
+
+This project was built for an assignment in *DS4300: Large Scale Information Processing*. 
 
 ## To run: 
 - run the 'generator' file in order to generate CSV files of random tweets and follower combinations
