@@ -1,5 +1,5 @@
 # Twitter Simulation
-This project simulates posting and retrieving tweets as the twitter application would do.  Two APIs are currently built, one for Postgres and one for Redis.  Read/write speeds were tested and documented for each implementation, then compared.
+This project simulates posting and retrieving tweets as the Twitter application would do.  It was built as a Java API with two current implementations using different databases, one with Postgres and one with Redis.  Read/write speeds were tested and documented for each implementation, then compared.
 
 This project was built for an assignment in *DS4300: Large Scale Information Processing*. 
 
